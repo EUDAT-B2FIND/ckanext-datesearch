@@ -25,6 +25,10 @@ this.ckan.module('daterangepicker-module', function ($, _) {
             // Add hidden <input> tags #ext_startdate and #ext_enddate,
             // if they don't already exist.
             var form = $("#dataset-search");
+            // CKAN 2.1
+            if (!form.length) {
+                form = $(".search-form");
+            }
             if ($("#ext_startdate").length === 0) {
                 $('<input type="hidden" id="ext_startdate" name="ext_startdate" />').appendTo(form);
             }
@@ -45,18 +49,19 @@ this.ckan.module('daterangepicker-module', function ($, _) {
 
                     // Format the start and end dates into strings in a date format
                     // that Solr understands.
-                    var v = moment(ev.date).format('YYYY-MM-DDTHH:mm:ss') + 'Z';
+                    var v = moment(ev.date);
+                    var fs = 'YYYY-MM-DDTHH:mm:ss'
 
                     switch (ev.target.name) {
                         case 'start':
                             // Set the value of the hidden <input id="ext_startdate"> to
                             // the chosen start date.
-                            $('#ext_startdate').val(v);
+                            $('#ext_startdate').val(v.format(fs) + 'Z');
                             break;
                         case 'end':
                             // Set the value of the hidden <input id="ext_enddate"> to
                             // the chosen end date.
-                            $('#ext_enddate').val(v);
+                            $('#ext_enddate').val(v.add('y', 1).subtract('s', 1).format(fs) + 'Z');
                             break;
                     }
 
