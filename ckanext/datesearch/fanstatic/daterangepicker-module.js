@@ -42,7 +42,7 @@ this.ckan.module('daterangepicker-module', function ($, _) {
                 minViewMode: 2,
                 keyboardNavigation: false,
                 autoclose: true
-            }).on('hide', function (ev) {
+            }).on('changeDate', function (ev) {
                     // Bootstrap-daterangepicker calls this function after the user picks a start and end date.
 
                     // Format the start and end dates into strings in a date format that Solr understands.
@@ -69,7 +69,7 @@ this.ckan.module('daterangepicker-module', function ($, _) {
                     }
 
                     // Submit the <form id="dataset-search">.
-                    //$("#dataset-search").submit();
+                    form.submit();
                 });
         }
     }
