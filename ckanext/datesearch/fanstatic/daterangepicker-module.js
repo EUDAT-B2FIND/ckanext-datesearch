@@ -52,11 +52,19 @@ this.ckan.module('daterangepicker-module', function ($, _) {
                     switch (ev.target.name) {
                         case 'start':
                             // Set the value of the hidden <input id="ext_startdate"> to the chosen start date.
-                            $('#ext_startdate').val(v.format(fs) + 'Z');
+                            if (ev.date) {
+                                $('#ext_startdate').val(v.format(fs) + 'Z');
+                            } else {
+                                $('#ext_startdate').val('');
+                            }
                             break;
                         case 'end':
                             // Set the value of the hidden <input id="ext_enddate"> to the chosen end date.
-                            $('#ext_enddate').val(v.add('y', 1).subtract('s', 1).format(fs) + 'Z');
+                            if (ev.date) {
+                                $('#ext_enddate').val(v.add('y', 1).subtract('s', 1).format(fs) + 'Z');
+                            } else {
+                                $('#ext_enddate').val('');
+                            }
                             break;
                     }
 
