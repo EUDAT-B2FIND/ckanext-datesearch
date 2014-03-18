@@ -5,10 +5,11 @@ version = '0.1'
 setup(
     name='ckanext-datesearch',
     version=version,
-    description="",
-    long_description="""\
+    description="CKAN extension for publication year facet",
+    long_description=
+    """
     """,
-    classifiers=[], # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
+    classifiers=[],  # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
     keywords='',
     author='',
     author_email='',
@@ -21,9 +22,9 @@ setup(
     install_requires=[
         # -*- Extra requirements: -*-
     ],
-    entry_points=\
+    entry_points=
     """
-        [ckan.plugins]
+    [ckan.plugins]
     # Add plugins here, eg
     # myplugin=ckanext.datesearch:PluginClass
     datesearch=ckanext.datesearch.plugin:DateSearchPlugin
