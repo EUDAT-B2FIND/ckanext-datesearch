@@ -14,11 +14,11 @@ this.ckan.module('daterangepicker-module', function ($, _) {
 
             // Populate the datepicker and hidden fields
             if (param_start) {
-                $('input[name="start"]').val(moment.utc(param_start).years());
+                $('#datepicker #start').val(moment.utc(param_start).years());
                 $('#ext_startdate').val(param_start);
             }
             if (param_end) {
-                $('input[name="end"]').val(moment.utc(param_end).years());
+                $('#datepicker #end').val(moment.utc(param_end).years());
                 $('#ext_enddate').val(param_end);
             }
 
