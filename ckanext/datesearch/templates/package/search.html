@@ -6,16 +6,16 @@
   {% resource 'ckanext-datesearch/bootstrap-datepicker.js' %}
   {% resource 'ckanext-datesearch/daterangepicker-module.js' %}
 
-  <!-- This <section> is the date-range picker widget in the sidebar. -->
+  {# This <section> is the date-range picker widget in the sidebar. #}
   <section class="module module-narrow module-shallow">
     <h2 class="module-heading">
       <i class="icon-medium icon-calendar"></i> {{ _('Publication Year') }}
       <a href="{{ h.remove_url_param(['ext_startdate', 'ext_enddate']) }}" class="action">{{ _('Clear') }}</a>
     </h2>
     <div class="module-content input-prepend input-daterange" data-module="daterange-query" id="datepicker">
-      <input type="text" class="input-small" readonly="" name="start" data-module="daterangepicker-module" />
-      <span class="add-on">to</span><br>
-      <input type="text" class="input-small" readonly="" name="end" data-module="daterangepicker-module" />
+      <input type="text" class="input-mini" style="cursor:pointer;" readonly="" name="start" data-module="daterangepicker-module" />
+      <span class="add-on" style="border:none;background-color:#ffffff;">&nbsp;&nbsp;to&nbsp;&nbsp;</span>
+      <input type="text" class="input-mini" style="cursor:pointer;" readonly="" name="end" data-module="daterangepicker-module" />
     </div>
   </section>
 
