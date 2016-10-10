@@ -1,14 +1,12 @@
 from setuptools import setup, find_packages
 
-version = '0.2'
-
 setup(
     name='ckanext-datesearch',
-    version=version,
-    description="CKAN extension for publication year facet",
+    version='0.3.0',
+    description='CKAN extension for publication year facet',
     long_description=
-    """
-    """,
+    '''
+    ''',
     classifiers=[],  # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
     keywords='ckan ckanext datesearch facet',
     author='Mikael Karlsson',
@@ -23,8 +21,8 @@ setup(
         # -*- Extra requirements: -*-
     ],
     entry_points=
-    """
+    '''
     [ckan.plugins]
     datesearch=ckanext.datesearch.plugin:DateSearchPlugin
-    """,
+    ''',
 )
