@@ -14,11 +14,11 @@ this.ckan.module('daterangepicker-module', function ($, _) {
 
             // Populate the datepicker and hidden fields
             if (param_start) {
-                $('#datepicker #start').val(moment.utc(param_start).years());
+                $('#datepicker #start').val(moment.utc(param_start).year());
                 $('#ext_startdate').val(param_start);
             }
             if (param_end) {
-                $('#datepicker #end').val(moment.utc(param_end).years());
+                $('#datepicker #end').val(moment.utc(param_end).year());
                 $('#ext_enddate').val(param_end);
             }
 
@@ -47,7 +47,7 @@ this.ckan.module('daterangepicker-module', function ($, _) {
 
                     // Format the start and end dates into strings in a date format that Solr understands.
                     var v = moment(ev.date);
-                    var fs = 'YYYY-MM-DDTHH:mm:ss'
+                    var fs = 'YYYY-MM-DDTHH:mm:ss';
 
                     switch (ev.target.name) {
                         case 'start':
