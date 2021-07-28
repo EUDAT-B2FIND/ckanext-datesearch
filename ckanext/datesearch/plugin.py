@@ -10,10 +10,11 @@ class DateSearchPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IPackageController, inherit=True)
 
-    def update_config(self, config):
-        #toolkit.add_template_directory(config, 'templates')
-        #toolkit.add_resource('fanstatic', 'ckanext-datesearch')
-        pass
+    def update_config(self, config_):
+        toolkit.add_template_directory(config_, 'templates')
+        toolkit.add_public_directory(config_, 'fanstatic')
+        toolkit.add_resource('fanstatic', 'ckanext-datesearch')
+        return config_
 
     def before_search(self, search_params):
         extras = search_params.get('extras')
