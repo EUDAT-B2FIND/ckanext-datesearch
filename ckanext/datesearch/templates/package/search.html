@@ -1,10 +1,10 @@
 {% ckan_extends %}
 
 {% block secondary_content %}
-  {% resource 'ckanext-datesearch/moment.js' %}
-  {% resource 'ckanext-datesearch/datepicker.css' %}
-  {% resource 'ckanext-datesearch/bootstrap-datepicker.js' %}
-  {% resource 'ckanext-datesearch/daterangepicker-module.js' %}
+  {% asset 'ckanext-datesearch/moment' %}
+  {% asset 'ckanext-datesearch/datepicker-css' %}
+  {% asset 'ckanext-datesearch/bootstrap-datepicker' %}
+  {% asset 'ckanext-datesearch/daterangepicker-module' %}
 
   {# This <section> is the date-range picker widget in the sidebar. #}
   <section class="module module-narrow module-shallow">
